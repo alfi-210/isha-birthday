@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#120d20">
+  <title>For You ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="stars" id="stars"></div>
+
+  <iframe name="answerSubmitFrame" id="answerSubmitFrame" class="hidden-frame" title=""></iframe>
+  <main id="app">
+
+    <section class="screen active" id="lock">
+      <div class="eyebrow">A LITTLE SURPRISE</div>
+      <h1>Something special<br><em>is waiting for you.</em></h1>
+      <p class="muted">But first, prove that you're the birthday girl.</p>
+
+      <div class="dob-card">
+        <label for="dob">Enter your date of birth</label>
+        <input id="dob" type="date">
+        <button class="primary" id="unlockBtn">Unlock my surprise <span>→</span></button>
+        <p class="error" id="dobError"></p>
+      </div>
+    </section>
+
+    <section class="screen" id="letter">
+      <div class="chapter">CHAPTER 01 · A LETTER</div>
+      <div class="letter-wrap">
+        <div class="wax">♡</div>
+        <p class="script">For you,</p>
+        <h2>Happy Birthday, <span data-name>Isha</span>.</h2>
+        <p class="letter-text" id="wishText"></p>
+        <button class="ghost" data-next="question">Continue <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="question">
+      <div class="chapter">CHAPTER 02 · ONE QUESTION</div>
+      <div class="question-card">
+        <div class="tiny-star">✦</div>
+        <p class="script">Before the next reveal…</p>
+        <h2 id="questionText"></h2>
+        <textarea id="answer" maxlength="220" placeholder="Write your answer here…"></textarea>
+        <div class="answer-row">
+          <span id="count">0 / 220</span>
+          <button class="primary" id="answerBtn">Reveal the memory <span>→</span></button>
+        </div>
+        <p class="answer-status" id="answerStatus"></p>
+        <p class="error" id="answerError"></p>
+      </div>
+    </section>
+
+    <section class="screen" id="photo">
+      <div class="chapter">CHAPTER 03 · A MEMORY</div>
+      <div class="photo-stage">
+        <div class="polaroid">
+          <div class="tape"></div>
+          <img src="assets/birthday-photo.jpg" alt="Birthday memory" id="birthdayPhoto">
+          <p id="photoCaption"></p>
+        </div>
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="sparkle s1">✦</div>
+        <div class="sparkle s2">✧</div>
+      </div>
+      <button class="ghost" data-next="video">There's one more thing <span>→</span></button>
+    </section>
+
+    <section class="screen" id="video">
+      <div class="chapter">CHAPTER 04 · PRESS PLAY</div>
+      <p class="script">And now…</p>
+      <h2 id="videoIntro"></h2>
+      <div class="video-frame">
+        <div class="video-glow"></div>
+        <video id="birthdayVideo" controls playsinline poster="assets/video-poster.jpg">
+          <source src="assets/birthday-video.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+      <button class="ghost" data-next="final">Finish the story <span>→</span></button>
+    </section>
+
+    <section class="screen" id="final">
+      <div class="final-stars">✦　✧　✦</div>
+      <p class="script">And finally…</p>
+      <h1 id="finalTitle"></h1>
+      <div class="final-line"></div>
+      <p id="finalMessage"></p>
+      <p class="signature" id="signature"></p>
+      <button class="primary" id="replay">Replay from the beginning ↺</button>
+    </section>
+
+  </main>
+
+  <div class="progress"><span id="progressBar"></span></div>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
